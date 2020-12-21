@@ -8,7 +8,7 @@
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis build
-status](https://travis-ci.com/chris-dworschak/eaRworm.svg?branch=master)](https://travis-ci.com/chris-dworschak/eaRworm)
+status](https://travis-ci.com/chris-dworschak/eaRworm.svg?branch=main)](https://travis-ci.com/chris-dworschak/eaRworm)
 <!-- badges: end -->
 
 This package lets you play “Merry Christmas” and “Happy Birthday” using
