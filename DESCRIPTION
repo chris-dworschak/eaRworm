@@ -1,0 +1,20 @@
+Package: eaRworm
+Title: Play a catchy tune using R
+Version: 1.0.0
+Authors@R: 
+    person(given = "Christoph",
+           family = "Dworschak",
+           role = c("aut", "cre"),
+           email = "c.dworschak@essex.ac.uk",
+           comment = c(ORCID = "0000-0003-0196-9545"))
+Author: Christoph Dworschak [aut, cre] (<https://orcid.org/0000-0003-0196-9545>)
+Description: A fun package to play "Merry Christmas" or "Happy Birthday" using R.
+License: file LICENSE
+Encoding: UTF-8
+Language: en-US
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: htmltab, sound
+Suggests: 
+    testthat

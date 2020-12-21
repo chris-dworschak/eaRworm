@@ -1,0 +1,74 @@
+#' @title 'Merry Christmas' tune in R
+#' @name merry.christmas
+#' @description Play "Merry Christmas" using R.
+#' @param tune character string. Allows for alternative arrangements.
+#' Can be set to "normal" for the usual tune, and
+#' "exciting" for some alternate notes and rythms.
+#' @details The function _`merry.christmas`_ plays "Merry Christmas" in R.
+#' @import sound
+#' @import htmltab
+#' @author Christoph Dworschak \cr Website: \href{https://www.chrisdworschak.com/}{<https://chrisdworschak.com/>}
+#' @examples
+#' \dontrun{
+#' merry.christmas("normal")
+#' }
+#' @export
+
+
+merry.christmas <- function(tune = "normal"){
+
+if ( (is.null(tune) | !is.character(tune) | tune=="") == TRUE ) {
+    stop('The argument "tune" must be set to "normal", "exciting", or "very exciting". ', call. = FALSE)
+}
+  
+if (  tune=="very exciting" ) {
+    stop('A very exciting tune is not yet implemented for "Merry Christmas"; the elves are still working on that. ', call. = FALSE)
+}
+
+if(tune == "normal"){
+pitch <- c("C4", "F4", "F4", "G4", "F4", "E4", "D4", "D4",
+           "D4", "G4", "G4", "A4", "G4", "F4", "E4", "C4",
+           "C4", "A4", "A4", "A#4", "A4", "G4", "F4", "D4",
+           "C4", "C4", "D4", "G4", "E4", "F4",
+           "C4", "F4", "F4", "F4", "E4",
+           "E4", "F4", "E4", "D4", "C4",
+           "C4", "A4", "G4", "F4", "C5", "C4",
+           "C4", "C4", "D4", "G4", "E4", "F4")
+length <- c(rep(c(1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1), 3),
+            0.5, 0.5, 1, 1, 1, 2,
+            rep(c(1, 1, 1, 1, 2), 2),
+            1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 2)
+}
+
+if(tune == "exciting"){
+  pitch <- c("C4", "F4", "F4", "G4", "F4", "G4", "D4", "D4",
+             "D4", "G4", "G4", "A4", "G4", "A4", rep(c("E4", "G4"), 2), "E4", 
+             "E4", "A4", "A4", "A#4", "A4", "G4", "F4", "D4",
+             "C4", "C4", "D4", "G4", "E4", "F4", "E4", "F4",
+             "C4", "F4", "A#4", "A4", "G4", "F4", "E4",
+             "E4", "F4", "G4", "F4", "E4", "D4", "C4",
+             "C4", "A4", "G4", "F4", "C5", "C4",
+             rep("C4", 4), "D4", "G4", "E4", "F4", "E4", "F4")
+  length <- c(1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1,
+              1, 1, 0.5, 0.5, 0.5, 0.5, rep(0.25, 4), 1,
+              1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1,
+              0.5, 0.5, 1, 1, 1, 0.25, 0.25, 1.5,
+              rep(c(1, 1, rep(0.5, 4), 2), 2),
+              1, 1, 1, 1, 1, 1, rep(0.25, 4), 1, 1, 1, 0.25, 0.25, 1.5)
+}
+
+christmas.df <- data.frame(pitch, length)
+
+freq.table <- htmltab::htmltab("https://de.wikipedia.org/wiki/Frequenzen_der_gleichstufigen_Stimmung", 1, 
+                            colNames = c("note", "pitch1", "pitch2", "freq"))
+freq.table$freq <- as.numeric( gsub(",", ".", freq.table$freq) )
+freq.table$pitch1 <- substr(freq.table$pitch1, 0, 3)
+
+christmas.df$freq <- lapply(christmas.df$pitch, function(x) freq.table$freq[freq.table$pitch1==x])
+
+wave <- do.call("c", mapply(sound::Sine, christmas.df$freq, (christmas.df$length/110)*60, rate=44100, channels=1) )
+wave <- sound::as.Sample(wave)
+
+sound::play(wave)
+}
+
