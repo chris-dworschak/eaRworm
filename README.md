@@ -11,9 +11,9 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 status](https://travis-ci.com/chris-dworschak/eaRworm.svg?branch=main)](https://travis-ci.com/chris-dworschak/eaRworm)
 <!-- badges: end -->
 
-This package lets you play “Merry Christmas” and “Happy Birthday” using
-R. It also contains a small number of arrangements that slightly deviate
-from the standard song versions.
+This is a toy package that lets you play “Merry Christmas” and “Happy
+Birthday” using R. It also contains a small number of arrangements that
+slightly deviate from the standard song versions.
 
 ## Installation
 
