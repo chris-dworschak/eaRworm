@@ -58,9 +58,6 @@ if( is.null(set.player)==FALSE & (!is.character(set.player) | set.player=="") ==
 if(is.null(set.player)==FALSE & is.character(set.player)==TRUE){ 
   sound::setWavPlayer(set.player)
 }
-if( is.null(sound::findWavPlayer() ) ){
-  stop('No WAV audio player was identified. Supply the argument "set.player" with a file path (character string) to an audio player able to play WAV files.', call. = FALSE)
-}
 
 
 bday.df <- data.frame(pitch, length)
