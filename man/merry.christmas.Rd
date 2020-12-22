@@ -4,12 +4,17 @@
 \alias{merry.christmas}
 \title{'Merry Christmas' tune in R}
 \usage{
-merry.christmas(tune = "normal")
+merry.christmas(tune = "normal", set.player = NULL)
 }
 \arguments{
 \item{tune}{character string. Allows for alternative arrangements.
 Can be set to "normal" for the usual tune, and
-"exciting" for some alternate notes and rythms.}
+"exciting" for a more playful version.}
+
+\item{set.player}{character string. If no default audio player for WAV files can be identified,
+the function will return an error. In that case, a file path to an appropriate player needs to be manually set.
+Use this argument to set a file path to an audio player on your system. In Windows, this might e.g. be
+"C:/Program Files/Windows Media Player/wmplayer.exe".}
 }
 \description{
 Play "Merry Christmas" using R.

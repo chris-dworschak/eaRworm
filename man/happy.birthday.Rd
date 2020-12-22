@@ -4,13 +4,18 @@
 \alias{happy.birthday}
 \title{'Happy Birthday' tune in R}
 \usage{
-happy.birthday(tune = "normal")
+happy.birthday(tune = "normal", set.player = NULL)
 }
 \arguments{
 \item{tune}{character string. Allows for alternative arrangements.
 Can be set to "normal" for the usual tune,
 "exciting" for the use of a triplet,
 and "very exciting" for the use of a triplet and cadenza.}
+
+\item{set.player}{character string. If no default audio player for WAV files can be identified,
+the function will return an error. In that case, a file path to an appropriate player needs to be manually set.
+Use this argument to set a file path to an audio player on your system. In Windows, this might e.g. be
+"C:/Program Files/Windows Media Player/wmplayer.exe".}
 }
 \description{
 Play "Happy Birthday" using R.
