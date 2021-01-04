@@ -52,9 +52,9 @@ length <- c(rep(c(0.33, 0.33, 0.33, 1, 1, 0.33, 0.33, 0.33, 2), 2),
           0.33, 0.33, 0.33, 1, 1, 1, 1, 0.33, 0.33, 2.33, 0.33, 0.33, 0.33, 1, 1, 0.33, 0.33, 0.33, 3)
 }
 
-if( is.null(set.player)==FALSE & (!is.character(set.player) | set.player=="") == TRUE ) {
+if( is.null(set.player)==FALSE ) {if( (!is.character(set.player) | set.player=="") == TRUE ) {
   stop('The argument "set.player" must be supplied with a file path (character string) to an audio player able to play WAV files.', call. = FALSE)
-}  
+} }
 if(is.null(set.player)==FALSE & is.character(set.player)==TRUE){ 
   sound::setWavPlayer(set.player)
 }
