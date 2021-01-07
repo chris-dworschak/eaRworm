@@ -11,9 +11,12 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://travis-ci.com/chris-dworschak/eaRworm.svg?branch=main)](https://travis-ci.com/chris-dworschak/eaRworm)
 <!-- badges: end -->
 
-This is a toy package that lets you play “Merry Christmas” and “Happy
+This package enables playing audio of “Merry Christmas” and “Happy
 Birthday” using R. It also contains a small number of arrangements that
-slightly deviate from the standard song versions.
+slightly deviate from the standard song versions. I developed this toy
+package in Christmas spirit; it will not be submitted to CRAN. The
+package status is “experimental” because use is dependent on operating
+system and a pre-installed WAV audio player.
 
 ## Installation
 
