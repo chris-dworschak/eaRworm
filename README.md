@@ -21,11 +21,10 @@ system and a pre-installed WAV audio player.
 ## Installation
 
 You can install the development version of eaRworm from
-[GitHub](https://github.com/) with:
+[GitLab](https://gitlab.com/chris-dworschak/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("chris-dworschak/eaRworm") # downloads and installs the package
+remotes::install_gitlab("chris-dworschak/eaRworm") # downloads and installs the package from GitLab
 ```
 
 ## Example

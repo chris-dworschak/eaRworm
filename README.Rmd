@@ -28,11 +28,10 @@ This package enables playing audio of "Merry Christmas" and "Happy Birthday" usi
 
 ## Installation
 
-You can install the development version of eaRworm from [GitHub](https://github.com/) with:
+You can install the development version of eaRworm from [GitLab](https://gitlab.com/chris-dworschak/) with: 
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("chris-dworschak/eaRworm") # downloads and installs the package
+remotes::install_gitlab("chris-dworschak/eaRworm") # downloads and installs the package from GitLab
 ```
 
 
