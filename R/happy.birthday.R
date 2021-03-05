@@ -11,7 +11,8 @@
 #' "C:/Program Files/Windows Media Player/wmplayer.exe".
 #' @details The function _`happy.birthday`_ plays "Happy Birthday" in R.
 #' @import sound
-#' @import htmltab
+#' @import rvest
+#' @import xml2
 #' @author Christoph Dworschak \cr Website: \href{https://www.chrisdworschak.com/}{<https://chrisdworschak.com/>}
 #' @references H/t to Jochen Sch&auml;fer on CorrelAid's <https://correlaid.org/blog/music-with-r/>!
 #' @examples

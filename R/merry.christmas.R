@@ -10,7 +10,8 @@
 #' "C:/Program Files/Windows Media Player/wmplayer.exe".
 #' @details The function _`merry.christmas`_ plays "Merry Christmas" in R.
 #' @import sound
-#' @import htmltab
+#' @import rvest
+#' @import xml2
 #' @author Christoph Dworschak \cr Website: \href{https://www.chrisdworschak.com/}{<https://chrisdworschak.com/>}
 #' @examples
 #' \dontrun{
