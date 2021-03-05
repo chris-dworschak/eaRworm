@@ -10,8 +10,7 @@ Authors@R:
 Author: Christoph Dworschak [aut, cre] (<https://orcid.org/0000-0003-0196-9545>)
 Description: A toy package to play audio of "Merry Christmas" or "Happy Birthday" using R. Functionality includes a 
   small number of arrangements that slightly deviate from the standard song versions. I developed this toy package 
-  in Christmas spirit; it will not be submitted to CRAN. The package status is "experimental" because successful use 
-  is dependent on the operating system and a pre-installed WAV audio player.
+  in Christmas spirit; it will not be submitted to CRAN. Audio is dependent on a pre-installed WAV audio player that the R installation can locate.
 License: GPL-3
 Encoding: UTF-8
 Language: en-US
