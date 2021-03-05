@@ -59,13 +59,14 @@ if(is.null(set.player)==FALSE & is.character(set.player)==TRUE){
   sound::setWavPlayer(set.player)
 }
 
-
 bday.df <- data.frame(pitch, length)
 
-freq.table <- htmltab::htmltab("https://de.wikipedia.org/wiki/Frequenzen_der_gleichstufigen_Stimmung", 1, 
-                            colNames = c("note", "pitch1", "pitch2", "freq"))
-freq.table$freq <- as.numeric( gsub(",", ".", freq.table$freq) )
+htmltable <- xml2::read_html("https://de.wikipedia.org/wiki/Frequenzen_der_gleichstufigen_Stimmung")
+freq.table <- rvest::html_table(htmltable, header = TRUE, trim = TRUE, dec = ",")[[1]]
+colnames(freq.table) <- c("note", "pitch1", "pitch2", "freq")
+freq.table$freq <- as.numeric( freq.table$freq )
 freq.table$pitch1 <- substr(freq.table$pitch1, 0, 3)
+freq.table$pitch1[freq.table$pitch1=="A4["] <- "A4"
 
 bday.df$freq <- lapply(bday.df$pitch, function(x) freq.table$freq[freq.table$pitch1==x])
 

@@ -1,6 +1,6 @@
 Package: eaRworm
 Title: Play a catchy tune using R
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     person(given = "Christoph",
            family = "Dworschak",
@@ -8,13 +8,13 @@ Authors@R:
            email = "c.dworschak@essex.ac.uk",
            comment = c(ORCID = "0000-0003-0196-9545"))
 Author: Christoph Dworschak [aut, cre] (<https://orcid.org/0000-0003-0196-9545>)
-Description: A toy package to play audio of "Merry Christmas" or "Happy Birthday" using R.
-License: file LICENSE
+Description: A toy package to play audio of "Merry Christmas" or "Happy Birthday" using R. Functionality includes a small number of arrangements that slightly deviate from the standard song versions. I developed this toy package in Christmas spirit; it will not be submitted to CRAN. The package status is "experimental" because successful use is dependent on the operating system and a pre-installed WAV audio player.
+License: GPL-3
 Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: htmltab, sound
+Imports: xml2, rvest, sound
 Suggests: 
     testthat
